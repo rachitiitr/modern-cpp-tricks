@@ -1,11 +1,18 @@
+## Introduction
+This is the list of modern CPP tricks often used in Coding Interviews and Competitive Programming.  
+If you like Rachit's work, you can follow at - 
+- Discord - https://bit.ly/discord-rachit
+- Programming YouTube Channel - https://bit.ly/rachityoutube
+
+## Contents:
 - [Powerful Logging and Debugging](#powerful-logging-and-debugging)
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
 
-# Powerful Logging and Debugging
+## Powerful Logging and Debugging
 
-## How debug macros work?
+### How debug macros work?
 Straight to the point, I have often used the `debug` macro which stringifies the variable names and their values.
 
 ```cpp
@@ -16,7 +23,7 @@ deb(ten); // prints "ten = 10"
 
 This is often useful in debugging.
 
-## The Problem with this macro - its not scalable
+### The Problem with this macro - its not scalable
 However, when you have multiple variables to log, you end up with more `deb2` and `deb3` macros.
 
 ```cpp
@@ -27,7 +34,7 @@ However, when you have multiple variables to log, you end up with more `deb2` an
 
 This is not scalable.
 
-## Solution using a powerful macro
+### Solution using a powerful macro
 Here is the solution using variadic macros and fold expressions,
 
 ```cpp
