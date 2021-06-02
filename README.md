@@ -5,11 +5,19 @@ If you like Rachit's work, you can follow at -
 - Programming YouTube Channel - https://bit.ly/rachityoutube
 
 ## Contents: <!-- omit in toc -->
+- [No more nested `min(x, min(y, ...))`](#no-more-nested-minx-miny-)
 - [JavaScript like Destructuring using Structured Binding in C++](#javascript-like-destructuring-using-structured-binding-in-c)
 - [Powerful Logging and Debugging](#powerful-logging-and-debugging)
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
+
+## No more nested `min(x, min(y, ...))`
+Use initializer list and `std::min` and `std::max` to make life easy
+```cpp
+small = min(x, min(y, min(z, k))); // the old way
+small = min({x, y, z, k}); // life is easy
+```
 
 ## JavaScript like Destructuring using Structured Binding in C++
 ```cpp
