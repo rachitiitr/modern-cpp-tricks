@@ -1,17 +1,29 @@
-## Introduction
+## Introduction  <!-- omit in toc -->
 This is the list of modern CPP tricks often used in Coding Interviews and Competitive Programming.  
 If you like Rachit's work, you can follow at - 
 - Discord - https://bit.ly/discord-rachit
 - Programming YouTube Channel - https://bit.ly/rachityoutube
 
-## Contents:
+## Contents: <!-- omit in toc -->
+- [JavaScript like Destructuring using Structured Binding in C++](#javascript-like-destructuring-using-structured-binding-in-c)
 - [Powerful Logging and Debugging](#powerful-logging-and-debugging)
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
 
-## Powerful Logging and Debugging
+## JavaScript like Destructuring using Structured Binding in C++
+```cpp
+pair<int, int> cur = {1, 2};
+auto [x, y] = cur;
+// x is now 1, y is now 2
+// no need of cur.first and cur.second
 
+array<int, 3> arr = {1, 0, -1};
+auto [a, b, c] = arr;
+// a is now 1, b is now 0, c is now -1
+```
+
+## Powerful Logging and Debugging
 ### How debug macros work?
 Straight to the point, I have often used the `debug` macro which stringifies the variable names and their values.
 
