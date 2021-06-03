@@ -63,4 +63,50 @@ deb(xx); // prints "xx = 3"
 deb(xx, yy, xxyy); // prints "xx, yy, xxyy = 3, 10, 103"
 ```
 
- 
+## Generic Reader and Writer for multiple variables and containers
+```cpp
+template <typename... T>
+void read(T &...args) {
+    ((cin >> args), ...);
+}
+
+template <typename... T>
+void write(T &&...args) {
+    ((cout << args), ...);
+}
+
+template <typename T>
+void readContainer(T &t) {
+    for (auto &e : t) {
+        read(e);
+    }
+}
+
+template <typename T>
+void writeContainer(T &t) {
+    for (const auto &e : t) {
+        write(e, " ");
+    }
+    write("\n");
+}
+```
+## Usage
+```cpp
+  // Question: read three space seprated integers and print them in different lines.
+	int x, y, z;
+	read(x, y, z);
+	write(x, "\n", y, "\n", z, "\n");
+	
+  // even works with variable data types :)
+	int n;
+	string s;
+	read(n, s);
+	write(s, " has length ", n, "\n");
+	
+  // Question: read an array of `N` integers and print it to the output console.
+	int N;
+	read(N);
+	vector<int> arr(N);
+	readContainer(arr);
+	writeContainer(arr);
+```
