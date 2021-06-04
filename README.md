@@ -11,7 +11,7 @@ If you like Rachit's work, you can follow at -
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
-  - [Generic Reader and Writer for multiple variables and containers](#generic-reader-and-writer-for-multiple-variables-and-containers)
+- [Generic Reader and Writer for multiple variables and containers](#generic-reader-and-writer-for-multiple-variables-and-containers)
 - [Decorators in C++ and Multiple Parameters](#decorators-in-c-and-multiple-parameters)
   - [Live Demo on YouTube](#live-demo-on-youtube)
   - [Printing as many variables in one line](#printing-as-many-variables-in-one-line)
