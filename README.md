@@ -10,6 +10,7 @@ If you like Rachit's work, you can follow at -
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
+  - [Generic Reader and Writer for multiple variables and containers](#generic-reader-and-writer-for-multiple-variables-and-containers)
 
 ## JavaScript like Destructuring using Structured Binding in C++
 ```cpp
@@ -90,7 +91,7 @@ void writeContainer(T &t, string delimiter = " ") {
     write("\n");
 }
 ```
-## Usage
+### Usage
 ```cpp
 // Question: read three space seprated integers and print them in different lines.
 	int x, y, z;
