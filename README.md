@@ -11,6 +11,7 @@ If you like Rachit's work, you can follow at -
   - [How debug macros work?](#how-debug-macros-work)
   - [The Problem with this macro - its not scalable](#the-problem-with-this-macro---its-not-scalable)
   - [Solution using a powerful macro](#solution-using-a-powerful-macro)
+- [Generic Reader and Writer for multiple variables and containers](#generic-reader-and-writer-for-multiple-variables-and-containers)
 - [Decorators in C++ and Multiple Parameters](#decorators-in-c-and-multiple-parameters)
   - [Live Demo on YouTube](#live-demo-on-youtube)
   - [Printing as many variables in one line](#printing-as-many-variables-in-one-line)
@@ -86,6 +87,69 @@ deb(xx, yy, xxyy); // prints "xx, yy, xxyy = 3, 10, 103"
 ----------------
 
 
+## Generic Reader and Writer for multiple variables and containers
+```cpp
+template <typename... T>
+void read(T &...args) {
+    ((cin >> args), ...);
+}
+
+template <typename... T>
+void write(string delimiter, T &&...args) {
+    ((cout << args << delimiter), ...);
+}
+
+template <typename T>
+void readContainer(T &t) {
+    for (auto &e : t) {
+        read(e);
+    }
+}
+
+template <typename T>
+void writeContainer(string delimiter, T &t) {
+    for (const auto &e : t) {
+        write(delimiter, e);
+    }
+    write("\n");
+}
+```
+### Usage
+```cpp
+// Question: read three space seprated integers and print them in different lines.
+	int x, y, z;
+	read(x, y, z);
+	write("\n", x, y, z);
+	
+// even works with variable data types :)
+	int n;
+	string s;
+	read(n, s);
+	write(" ", s, "has length", n, "\n");
+	
+// Question: read an array of `N` integers and print it to the output console.
+	int N;
+	read(N);
+	vector<int> arr(N);
+	readContainer(arr);
+	writeContainer(" ", arr); // output: arr[0] arr[1] arr[2] ... arr[N - 1]
+	writeContainer("\n", arr);
+	/**
+	* output:
+	* arr[0]
+	* arr[1]
+	* arr[2]
+	* ...
+	* ...
+	* ...
+	* arr[N - 1]
+	*/
+```
+
+
+----------------
+
+
 ## Decorators in C++ and Multiple Parameters
 
 ### Live Demo on YouTube
@@ -144,6 +208,3 @@ beautify(debug_func(pow(2, 3)));
 ```
 Its amazing how much you can do by writing such generic decorators and nest them.  
 Think about decorators like `log_time` that calculates the time taken for a given function.
-
-
- 
