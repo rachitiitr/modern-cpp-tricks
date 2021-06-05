@@ -107,7 +107,7 @@ void readContainer(T &t) {
 }
 
 template <typename T>
-void writeContainer(T &t, string delimiter = " ") {
+void writeContainer(string delimiter, T &t) {
     for (const auto &e : t) {
         write(delimiter, e);
     }
@@ -132,8 +132,8 @@ void writeContainer(T &t, string delimiter = " ") {
 	read(N);
 	vector<int> arr(N);
 	readContainer(arr);
-	writeContainer(arr); // output: arr[0] arr[1] arr[2] ... arr[N - 1]
-	writeContainer(arr, "\n");
+	writeContainer(" ", arr); // output: arr[0] arr[1] arr[2] ... arr[N - 1]
+	writeContainer("\n", arr);
 	/**
 	* output:
 	* arr[0]
