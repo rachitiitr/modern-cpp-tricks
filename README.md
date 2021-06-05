@@ -133,7 +133,7 @@ void writeContainer(T &t, string delimiter = " ") {
 	vector<int> arr(N);
 	readContainer(arr);
 	writeContainer(arr); // output: arr[0] arr[1] arr[2] ... arr[N - 1]
-	writeContainer(arr, "\n);
+	writeContainer(arr, "\n");
 	/**
 	* output:
 	* arr[0]
