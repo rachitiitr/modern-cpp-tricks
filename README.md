@@ -27,6 +27,8 @@ small = min({x, y, z, k}); // life is easy
 ```
 
 ## JavaScript like Destructuring using Structured Binding in C++
+
+### Binding by value:
 ```cpp
 pair<int, int> cur = {1, 2};
 auto [x, y] = cur;
@@ -36,7 +38,21 @@ auto [x, y] = cur;
 array<int, 3> arr = {1, 0, -1};
 auto [a, b, c] = arr;
 // a is now 1, b is now 0, c is now -1
+a++;
+// a is now 2. arr[0] is unaffected, remains 1.
 ```
+
+### Binding by reference:
+```cpp
+array<int, 3> arr = {1, 0, -1};
+auto& [a, b, c] = arr;
+// a is now 1, b is now 0, c is now -1
+a++;
+// a is now 2, arr[0] is also 2.
+```
+
+**Note:** Structured binding cannot be done with vectors since vectors are dynamic.
+
 
 
 ----------------
