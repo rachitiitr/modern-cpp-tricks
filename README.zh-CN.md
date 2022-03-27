@@ -2,20 +2,20 @@
 以下列出了在面试和竞赛编程中经常使用的C++技巧。
 如果你喜欢 Rachit 的工作，你可以在以下平台关注作者 - 
 - Discord - https://bit.ly/discord-rachit
-- Programming YouTube Channel - https://bit.ly/rachityoutube
+- YouTube 编程频道 - https://bit.ly/rachityoutube
 
 ## 目录 <!-- omit in toc -->
 - [别再嵌套 `min(x, min(y, ...))`](#别再嵌套-minx-miny-)
-- [像 JavaScript 析构一样在C++中使用结构化绑定](#像-JavaScript-析构一样在C++中使用结构化绑定)
-- [ 强大的 Log 和 Debug](#强大的-Log-和-Debug)
-  - [debug 宏如何工作?](#debug-宏如何工作?)
+- [像 JavaScript 析构一样在 C++ 中使用结构化绑定](#像-javascript-析构一样在-c-中使用结构化绑定)
+- [ 强大的 Log 和 Debug](#强大的-log-和-debug)
+  - [debug 宏如何工作?](#debug-宏如何工作)
   - [这个宏存在的问题 - 不可扩展](#这个宏存在的问题-\--不可扩展)
   - [用强大的宏来解决问题](#用强大的宏来解决问题)
 - [用于多变量和容器的泛型读写器](#用于多变量和容器的泛型读写器)
-- [C++中的装饰器和多参数](#C++中的装饰器和多参数)
+- [C++中的装饰器和多参数](#c中的装饰器和多参数)
   - [YouTube 直播 Demo](#YouTube-直播-Demo)
   - [一行打印尽可能多的变量](#一行打印尽可能多的变量)
-  - [C++ 中强大的装饰器函数](#C++-中强大的装饰器函数)
+  - [C++ 中强大的装饰器函数](#c-中强大的装饰器函数)
   - [通过嵌套的方式利用装饰器函数](#通过嵌套的方式利用装饰器函数)
 
 
@@ -26,7 +26,7 @@ small = min(x, min(y, min(z, k))); // 旧方法
 small = min({x, y, z, k}); // 更轻松的办法
 ```
 
-## 像 JavaScript 析构一样在C++中使用结构化绑定
+## 像 JavaScript 析构一样在 C++ 中使用结构化绑定
 ```cpp
 pair<int, int> cur = {1, 2};
 auto [x, y] = cur;
